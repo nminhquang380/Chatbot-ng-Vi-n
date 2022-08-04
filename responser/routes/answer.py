@@ -9,4 +9,4 @@ router = APIRouter()
 @router.get("/hoidap",response_description="Question answered")
 async def hoi_dap(message):
     answer = response(message)
-    return {"câu trả lời": answer}
+    return {"answer": answer}

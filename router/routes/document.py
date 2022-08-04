@@ -25,17 +25,17 @@ router = APIRouter()
 async def get_document_data(id):
     # document = await retrieve_document(id)
     document = retrieve_document(id)
-    return document
-    # if document:
-    #     return ResponseModel(document, "document data retrieved successfully")
-    # return ErrorResponseModel("An error occurred.", 404, "document doesn't exist.")
+    # return document
+    if document:
+        return ResponseModel(document, "document data retrieved successfully")
+    return ErrorResponseModel("An error occurred.", 404, "document doesn't exist.")
 
 
 #add document
 @router.post("/", response_description="Documents Added")
 async def add_document_data(document : DocumentSchema =  Body(...)):
     document = jsonable_encoder(document)
-    new_document = await add_document(document)
+    new_document = add_document(document)
     return ResponseModel(new_document, "Document added successfully.")
 
 #retrieve all documents
@@ -51,7 +51,7 @@ async def get_documents():
 @router.put("/{id}")
 async def update_document_data(id: str, req: UpdateDocumentSchema = Body(...)):
     req = {k: v for k, v in req.dict().items() if v is not None}
-    updated_document = await update_document(id, req)
+    updated_document = update_document(id, req)
     if updated_document:
         return ResponseModel(
             "document with ID: {} name update is successful".format(id),
@@ -66,7 +66,7 @@ async def update_document_data(id: str, req: UpdateDocumentSchema = Body(...)):
 #delete document with ID
 @router.delete("/{id}", response_description="document data deleted from the database")
 async def delete_document_data(id: str):
-    deleted_document = await delete_document(id)
+    deleted_document = delete_document(id)
     if deleted_document:
         return ResponseModel(
             "document with ID: {} removed".format(id), "document deleted successfully"

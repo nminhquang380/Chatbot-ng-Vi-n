@@ -26,7 +26,7 @@ collection = database['myCollection']
 #query the document
 def document_query(document) -> dict:
     return {
-        "id": document["_id"],
+        "id": str(document["_id"]),
         "label": document["label"],
         "question": document["question"],
         "answer": document["answer"],
@@ -37,7 +37,7 @@ def document_query(document) -> dict:
 def retrieve_document(id: str) -> dict:
     document = collection.find_one({"_id": ObjectId(id)})
     if document:
-        return document
+        return document_query(document)
     
 
 #retrive all documents in the database
@@ -75,6 +75,11 @@ def delete_document(id: str):
     return False
 
 
-# if __name__ == "__main__":
-#    document = retrieve_document("61f1191a9f25a48832112d46")
-#    print(document)
+if __name__ == "__main__":
+   document = retrieve_document("61f1191a9f25a48832112d46")
+#    document = retrieve_documents() 
+   print(document)
+    # if delete_document('61f1191a9f25a48832112d46'):
+    #     print("thanh cong")
+    # else:
+    #     print("khong thanh cong")

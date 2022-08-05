@@ -1,0 +1,12 @@
+uvicorn==0.18.2
+pydantic==1.9.1
+fastapi==0.79.0
+typing==3.7.4.3
+bson==0.5.10
+motor==3.0.0
+# fasttext
+pymongo==4.2.0
+numpy==1.23.1
+googlesearch-python==1.1.0
+scipy==1.9.0
+sentence_transformers==2.2.2

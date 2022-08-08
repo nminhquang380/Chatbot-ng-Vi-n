@@ -1,8 +1,8 @@
 import fasttext
 
-# model = fasttext.train_supervised(input="train_data_final.txt", wordNgrams=2)
+model = fasttext.train_supervised(input="train_data_final.txt", wordNgrams=2)
 
-# model.save_model("model_dangvien.bin")
+model.save_model("model_dangvien.bin")
 
 model = fasttext.load_model("model_dangvien.bin")
 

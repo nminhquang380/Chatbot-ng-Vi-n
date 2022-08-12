@@ -2,7 +2,7 @@
 
 ## Mô tả
 
-    Đây là một dự án dành cho đối tượng Đảng viên. Giúp giải đáp một số thắc mắc thường gặp của Đảng viên về điều lệ Đảng và một số thủ tục.
+Đây là một dự án dành cho đối tượng Đảng viên. Giúp giải đáp một số thắc mắc thường gặp của Đảng viên về điều lệ Đảng và một số thủ tục.
  
 ## Cách cài đặt
 
@@ -38,9 +38,9 @@ Trong module thêm tệp dữ liệu cho việc huấn luyện, có tên là “
 
 ## Setup Database.
 
-    - Ở đây sử dụng MongoDB.
-    - Với tập dữ liệu chứa trong Collection ở local.
-    - Một document gồm một kịch bản trả lời câu hỏi:
+- Ở đây sử dụng MongoDB.
+- Với tập dữ liệu chứa trong Collection ở local.
+- Một document gồm một kịch bản trả lời câu hỏi:
      + '_id' : id của kịch bản.
      + 'label' : Nhãn của câu hỏi.
      + 'question' : Câu hỏi.

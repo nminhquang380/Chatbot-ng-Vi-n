@@ -36,7 +36,7 @@ Trong module thêm tệp dữ liệu cho việc huấn luyện, có tên là “
 
     python main.py
 
-## Setup Database.
+## Setup Database
 
 - Ở đây sử dụng MongoDB.
 - Với tập dữ liệu chứa trong Collection ở local.
